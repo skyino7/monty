@@ -10,6 +10,7 @@
 #include <stddef.h>
 #include <fcntl.h>
 #include <unistd.h>
+extern int Error_handle;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -39,10 +40,13 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+stack_t *add_dnodeint(stack_t **head, const int n);
+void free_dlistint(stack_t *head);
+
 int is_monty_file(char *string);
 FILE *correct_monty_use(int argc, char **string);
 void read_opcode(FILE *file_discriptor, stack_t **stack, unsigned int line_numer);
-int check_opcode(char *string, stack_t **stack, unsigned int line_numer);
+int check_opcode(FILE *f, char *str, stack_t **stack, unsigned int line_num, char *cmd);
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);

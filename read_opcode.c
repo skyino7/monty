@@ -16,7 +16,8 @@ void read_opcode(FILE *file_discriptor, stack_t **stack, unsigned int line_numer
 	read_chars = getline(&cmd, &cmdsize, file_discriptor);
 	if (read_chars == EOF)
 	{	
-		free(*stack);
+		if (*stack)
+			free(*stack);
 		free(cmd);
 		fclose(file_discriptor);
 		exit(EXIT_SUCCESS);
@@ -25,8 +26,8 @@ void read_opcode(FILE *file_discriptor, stack_t **stack, unsigned int line_numer
 	printf("before, %ld\n", read_chars);
 	if(line_opcode)
 	{
-		check_opcode(line_opcode, stack, line_numer);
-		printf("%s\n", line_opcode);
+		printf("%s=\n", line_opcode);
+		check_opcode(file_discriptor, line_opcode, stack, line_numer, cmd);
 	}
 	printf("after\n");
 	
