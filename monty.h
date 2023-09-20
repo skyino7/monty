@@ -1,6 +1,9 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+/*Added To Enable GETLINE on a different POSIX system.*/
+#define  _POSIX_C_SOURCE 200809L
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
