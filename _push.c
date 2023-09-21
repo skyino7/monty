@@ -17,6 +17,6 @@ void _push(stack_t **stack, unsigned int line_number)
 		fclose(plane.File);
 		exit(EXIT_FAILURE);
 	}
-	printf("%s----------\n", data);
+	printf("data-%s----------\n", data);
 	add_dnodeint(stack, atoi(data));
 }

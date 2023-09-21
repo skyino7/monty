@@ -27,10 +27,10 @@ void read_opcode(FILE *file_discriptor, stack_t **stack, unsigned int line_numer
 	printf("before, %ld\n", read_chars);
 	if(line_opcode)
 	{
-		printf("%s=\n", line_opcode);
+		printf("line_opcode-%s\n", line_opcode);
 		check_opcode(file_discriptor, line_opcode, stack, line_numer, cmd);
 	}
-	printf("after\n");
+	printf("after\n\n");
 	
 	free(cmd);
 }
