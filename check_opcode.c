@@ -30,7 +30,7 @@ int check_opcode(FILE *f, char *string, stack_t **stack, unsigned int line_numbe
 			fclose(f);
 			exit(EXIT_FAILURE);
 		}
-		//return (0);
+		/* return (0); */
 	}
 
 	printf("%s\n", string);

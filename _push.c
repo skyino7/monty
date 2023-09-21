@@ -1,12 +1,13 @@
 #include "monty.h"
 /**
- * @brief 
- * 
+ * @brief
+ *
  */
 void _push(stack_t **stack, unsigned int line_number)
 {
 	char *data = NULL;
-	//stack_t *new = NULL;
+	/* stack_t *new = NULL; */
+	(void)line_number;
 
 	data = strtok(NULL, " \n");
 	if (data == NULL)/*|| !atoi(data)*/
@@ -15,11 +16,11 @@ void _push(stack_t **stack, unsigned int line_number)
 		return;
 	}
 	add_dnodeint(stack, atoi(data));
-	// new = malloc(sizeof(stack));
-	// if (!new)
-	// {
-	// 	write(2, "Error: malloc failed\n", 22);
-	// 	exit(EXIT_FAILURE);
-	// }
-	// new->n = atoi(data);
+	/* new = malloc(sizeof(stack));
+	if (!new)
+	{
+		write(2, "Error: malloc failed\n", 22);
+		exit(EXIT_FAILURE);
+	}
+	new->n = atoi(data); */
 }
