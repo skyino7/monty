@@ -6,7 +6,6 @@
  * @argv: contains each argument
  * Return: 0 on success 1 otherwise
  */
-int Error_handle = 0;
 int main(int argc, char **argv)
 {
 	FILE *file;

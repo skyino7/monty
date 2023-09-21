@@ -18,19 +18,13 @@ int check_opcode(FILE *f, char *string, stack_t **stack, unsigned int line_numbe
 
 	for (i = 0; orders[i].opcode; i++)
 	{
+		printf("string-%s order-%s strcmp-%d\n", string, orders[i].opcode, strcmp(orders[i].opcode, string));
 		if (!strcmp(orders[i].opcode, string))
-			orders[i].f(stack, line_number);
-		printf("%s %s %d\n", string, orders[i].opcode, strcmp(orders[i].opcode, string));
-		if (Error_handle == 1)
 		{
-			fprintf(stderr, "L%d: usage: push integer\n", line_number);
-			free(cmd);
-			if(*stack)
-		 		free_dlistint(*stack);
-			fclose(f);
-			exit(EXIT_FAILURE);
+			orders[i].f(stack, line_number);
+			return (0);
 		}
-		//return (0);
+		printf("%s %s %d\n", string, orders[i].opcode, strcmp(orders[i].opcode, string));
 	}
 
 	printf("%s\n", string);

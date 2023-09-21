@@ -1,8 +1,8 @@
-pull
-push 10
+push 10 push 6
 push 5
 push 7
 pall
-push
+push 11
+pull
  
  

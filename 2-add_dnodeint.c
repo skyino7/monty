@@ -13,8 +13,12 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		Error_handle = -1;
-		return (NULL);
+		fclose(plane.File);
+		free(plane.line);
+		if (*head)
+			free_dlistint(*head);
+		write(2, "Error: malloc failed\n", 22);
+		exit(EXIT_FAILURE);
 	}
 	new->n = n;
 

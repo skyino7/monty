@@ -10,7 +10,7 @@
 #include <stddef.h>
 #include <fcntl.h>
 #include <unistd.h>
-extern int Error_handle;
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -39,6 +39,20 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+/**
+ * struct plane_t - 
+ *
+ * @File:
+ * @line:
+ * Discription:
+ */
+typedef struct plane_t
+{
+        FILE *File;
+        char *line;
+}plane_s;
+plane_s plane;
+/*extern plane_s plane;*/
 
 stack_t *add_dnodeint(stack_t **head, const int n);
 void free_dlistint(stack_t *head);

@@ -14,6 +14,7 @@ void read_opcode(FILE *file_discriptor, stack_t **stack, unsigned int line_numer
 	char *line_opcode = NULL;
 
 	read_chars = getline(&cmd, &cmdsize, file_discriptor);
+	plane.line = cmd;
 	if (read_chars == EOF)
 	{	
 		if (*stack)
