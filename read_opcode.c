@@ -24,13 +24,13 @@ void read_opcode(FILE *file, stack_t **stack, unsigned int line_numer)
 		exit(EXIT_SUCCESS);
 	}
 	line_opcode = strtok(cmd, " \n");
-	printf("before, %ld\n", read_chars);
+	/*printf("before, %ld\n", read_chars);*/
 	if(line_opcode)
 	{
-		printf("line_opcode-%s\n", line_opcode);
+		/*printf("line_opcode-%s\n", line_opcode);*/
 		check_opcode(line_opcode, stack, line_numer);
 	}
-	printf("after\n\n");
+	/*printf("after\n\n");*/
 	
 	free(cmd);
 }

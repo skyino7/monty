@@ -8,8 +8,8 @@ void _push(stack_t **stack, unsigned int line_number)
 	char *data = NULL;
 
 	data = strtok(NULL, " \n");
-	printf("data-%s----------\n", data);
-	printf("data-%d----------\n", atoi(data));
+	/*printf("data-%s----------\n", data);
+	printf("data-%d----------\n", atoi(data));*/
 	if (data == NULL|| !atoi(data))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
@@ -21,11 +21,4 @@ void _push(stack_t **stack, unsigned int line_number)
 	}
 
 	add_dnodeint(stack, atoi(data));
-	/* new = malloc(sizeof(stack));
-	if (!new)
-	{
-		write(2, "Error: malloc failed\n", 22);
-		exit(EXIT_FAILURE);
-	}
-	new->n = atoi(data); */
 }
