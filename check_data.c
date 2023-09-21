@@ -9,7 +9,9 @@ int check_data(char *string)
 
 	for(i = 0; string[i]; i++)
 	{
-		if (string[i] < '0' || string[i] > '9')
+		if (i == 0 && string[i] == '-')
+			continue;
+		else if (string[i] < '0' || string[i] > '9')
 			return (1);
 	}
 	return (0);
