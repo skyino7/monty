@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
- * @brief 
- * 
+ * @brief
+ *
  */
 void _push(stack_t **stack, unsigned int line_number)
 {
@@ -19,6 +19,13 @@ void _push(stack_t **stack, unsigned int line_number)
 		fclose(plane.File);
 		exit(EXIT_FAILURE);
 	}
-	
+
 	add_dnodeint(stack, atoi(data));
+	/* new = malloc(sizeof(stack));
+	if (!new)
+	{
+		write(2, "Error: malloc failed\n", 22);
+		exit(EXIT_FAILURE);
+	}
+	new->n = atoi(data); */
 }

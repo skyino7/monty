@@ -24,6 +24,7 @@ int check_opcode(char *string, stack_t **stack, unsigned int line_number)
 			orders[i].f(stack, line_number);
 			return (0);
 		}
+		/* return (0); */
 		printf("%s %s %d\n", string, orders[i].opcode, strcmp(orders[i].opcode, string));
 	}
 
