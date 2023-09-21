@@ -9,32 +9,20 @@
 FILE *correct_monty_use(int argc, char **string)
 {
 	FILE *file = NULL;
-	char *Errorbuffer;
 
 	if (argc != 2)
 	{
 		write(2, "USAGE: monty file\n", 19);
 		exit(EXIT_FAILURE);
 	}
-	Errorbuffer = malloc(sizeof(char) * (24 + strlen(string[1]) + 1));
-	if (!Errorbuffer)
-	{
-		write(2, "Error: malloc failed\n", 22);
-		exit(EXIT_FAILURE);
-	}
-	strcpy(Errorbuffer, "Error: Can't open file ");
-	strcat(Errorbuffer, string[1]);
-	strcat(Errorbuffer, "\n");
 	file = fopen(string[1], "r");
 	plane.File = file;
 	if (file == NULL)
 	{
-		write(2, Errorbuffer, (24 + strlen(string[1])));
-		free(Errorbuffer);
+		fprintf(stderr, "Error: Can't open file %s\n", string[1]);
 		if (file)
 			fclose(file);
 		exit(EXIT_FAILURE);
 	}
-	free(Errorbuffer);
 	return (file);
 }
