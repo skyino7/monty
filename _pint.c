@@ -1,9 +1,9 @@
 #include "monty.h"
 /**
- * @brief 
- * 
+ * @brief
+ *
  */
-void _print(stack_t **stack, unsigned int line_number)
+void _pint(stack_t **stack, unsigned int line_number)
 {
 	if (!(*stack))
 	{
