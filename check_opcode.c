@@ -7,7 +7,7 @@
  * @line_number: file's line number
  * Return: 0 on success 1 otherwise
  */
-int check_opcode(FILE *f, char *string, stack_t **stack, unsigned int line_number, char *cmd)
+int check_opcode(char *string, stack_t **stack, unsigned int line_number)
 {
 	instruction_t orders[] = {
 		{"push", _push},
@@ -29,10 +29,10 @@ int check_opcode(FILE *f, char *string, stack_t **stack, unsigned int line_numbe
 
 	printf("%s\n", string);
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, string);
-	free(cmd);
+	free(plane.line);
 	if(*stack)
 		free_dlistint(*stack);
-	fclose(f);
+	fclose(plane.File);
 	exit(EXIT_FAILURE);
 	return (1);
 }
