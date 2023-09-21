@@ -17,6 +17,8 @@ if (*stack)
 exit(EXIT_FAILURE);
 }
 
+(*stack)->next->n *= (*stack)->n;
+
 if ((*stack)->n == 0)
 {
 fprintf(stderr, "L%d: division by zero\n", line_number);
@@ -27,7 +29,6 @@ free_dlistint(*stack);
 exit(EXIT_FAILURE);
 }
 
-(*stack)->next->n *= (*stack)->n;
 *stack = (*stack)->next;
 free((*stack)->prev);
 (*stack)->prev = NULL;
