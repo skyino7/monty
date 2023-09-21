@@ -27,7 +27,7 @@ FILE *correct_monty_use(int argc, char **string)
 	strcat(Errorbuffer, "\n");
 	file = fopen(string[1], "r");
 	plane.File = file;
-	if (file == NULL || !is_monty_file(string[1]))
+	if (file == NULL)
 	{
 		write(2, Errorbuffer, (24 + strlen(string[1])));
 		free(Errorbuffer);
