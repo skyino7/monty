@@ -17,4 +17,7 @@ void _swap(stack_t **stack, unsigned int line_number)
 			free_dlistint(*stack);
 		exit(EXIT_FAILURE);
 	}
+	temp = (*stack)->n;
+	(*stack)->n = (*stack)->next->n;
+	(*stack)->next->n = temp;
 }
