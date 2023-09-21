@@ -1,8 +1,7 @@
 push 1
 pint
-nop
 push 2
 pint
-nop
+sub
 push 3
-pint
+pall
