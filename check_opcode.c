@@ -26,7 +26,7 @@ int check_opcode(char *string, stack_t **stack, unsigned int line_number)
 	}
 
 	/*printf("%s\n", string);*/
-	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, string);
+	fprintf(stderr, "L%d: unknown instruction %s", line_number, string);
 	free(plane.line);
 	if (*stack)
 		free_dlistint(*stack);
