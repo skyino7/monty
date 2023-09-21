@@ -40,11 +40,11 @@ char *opcode;
 void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 /**
- * struct plane_t -
+ * struct plane_t - plane
  *
- * @File:
- * @line:
- * Discription:
+ * @File: file
+ * @line: line
+ * Description: plane
  */
 typedef struct plane_t
 {
