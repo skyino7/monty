@@ -10,6 +10,8 @@ int check_data(char *string)
 
 	for (i = 0; string[i]; i++)
 	{
+		if (i == 0 && string[i] == '-')
+			continue;
 		if (string[i] < '0' || string[i] > '9')
 			return (1);
 	}

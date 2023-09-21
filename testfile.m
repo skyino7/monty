@@ -1,8 +1,2 @@
-push 10 push 6
-push 5
-push 7
+push 1abc
 pall
-push 11
-print 154
- 
- 
