@@ -1,4 +1,8 @@
 push 1
+pint
+nop
 push 2
-swap 2
-pall
+pint
+nop
+push 3
+pint
