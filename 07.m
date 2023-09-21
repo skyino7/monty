@@ -1,4 +1,4 @@
-push 1
+push 1a
 nop
 push 2
 nop
