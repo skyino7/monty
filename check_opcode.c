@@ -20,6 +20,8 @@ int check_opcode(char *string, stack_t **stack, unsigned int line_number)
 
 	for (i = 0; orders[i].opcode; i++)
 	{
+		if (plane.line[0] == '#')
+			string = "#";
 		if (!strcmp(orders[i].opcode, string))
 		{
 			orders[i].f(stack, line_number);
