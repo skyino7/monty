@@ -18,7 +18,7 @@ void read_opcode(FILE *file, stack_t **stack, unsigned int line_numer)
 	if (read_chars == EOF)
 	{	
 		if (*stack)
-			free(*stack);
+			free_dlistint(*stack);
 		free(cmd);
 		fclose(file);
 		exit(EXIT_SUCCESS);

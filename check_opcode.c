@@ -10,8 +10,8 @@
 int check_opcode(char *string, stack_t **stack, unsigned int line_number)
 {
 	instruction_t orders[] = {
-		{"push", _push},
-		{"pall", _pall},
+		{"push", _push}, {"pall", _pall},
+		{"print", _print},
 		{NULL, NULL}
 	};
 	int i;
