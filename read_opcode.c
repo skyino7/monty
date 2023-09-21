@@ -6,30 +6,31 @@
  * @stack: list to store the values given in the file
  * @line_number: file's line number
  */
-void read_opcode(FILE *file_discriptor, stack_t **stack, unsigned int line_numer)
+void read_opcode(FILE *file, stack_t **stack, unsigned int line_numer)
 {
 	char *cmd = NULL;
 	size_t cmdsize = 0;
 	ssize_t read_chars = 0;
 	char *line_opcode = NULL;
 
-	read_chars = getline(&cmd, &cmdsize, file_discriptor);
+	read_chars = getline(&cmd, &cmdsize, file);
+	plane.line = cmd;
 	if (read_chars == EOF)
 	{	
 		if (*stack)
 			free(*stack);
 		free(cmd);
-		fclose(file_discriptor);
+		fclose(file);
 		exit(EXIT_SUCCESS);
 	}
 	line_opcode = strtok(cmd, " \n");
 	printf("before, %ld\n", read_chars);
 	if(line_opcode)
 	{
-		printf("%s=\n", line_opcode);
-		check_opcode(file_discriptor, line_opcode, stack, line_numer, cmd);
+		printf("line_opcode-%s\n", line_opcode);
+		check_opcode(line_opcode, stack, line_numer);
 	}
-	printf("after\n");
+	printf("after\n\n");
 	
 	free(cmd);
 }

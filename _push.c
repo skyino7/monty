@@ -6,15 +6,20 @@
 void _push(stack_t **stack, unsigned int line_number)
 {
 	char *data = NULL;
-	/* stack_t *new = NULL; */
-	(void)line_number;
 
 	data = strtok(NULL, " \n");
-	if (data == NULL)/*|| !atoi(data)*/
+	printf("data-%s----------\n", data);
+	printf("data-%d----------\n", atoi(data));
+	if (data == NULL|| !atoi(data))
 	{
-		Error_handle = 1;
-		return;
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		if (*stack)
+			free_dlistint(*stack);
+		free(plane.line);
+		fclose(plane.File);
+		exit(EXIT_FAILURE);
 	}
+
 	add_dnodeint(stack, atoi(data));
 	/* new = malloc(sizeof(stack));
 	if (!new)
