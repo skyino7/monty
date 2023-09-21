@@ -1,7 +1,4 @@
-push 1
-pint
+push 5
 push 2
-pint
-sub
-push 3
+mod
 pall
