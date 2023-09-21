@@ -11,7 +11,7 @@ int is_monty_file(char *string)
 
 	slen = strlen(string);
 	if (string[slen - 1] == 'm')
-		if(string[slen - 2] == '.')
+		if (string[slen - 2] == '.')
 			return (1);
 	return (0);
 }

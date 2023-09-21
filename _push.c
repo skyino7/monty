@@ -1,15 +1,14 @@
 #include "monty.h"
 /**
- * @brief
- *
+ * _push - pushs int onto the stack
+ * @stack: storing stack
+ * @line_number: file's line number
  */
 void _push(stack_t **stack, unsigned int line_number)
 {
 	char *data = NULL;
 
 	data = strtok(NULL, " \n");
-	/*printf("data-%s----------\n", data);
-	printf("data-%d----------\n", atoi(data));*/
 	if (data == NULL || check_data(data))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);

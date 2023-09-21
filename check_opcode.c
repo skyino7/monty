@@ -18,19 +18,17 @@ int check_opcode(char *string, stack_t **stack, unsigned int line_number)
 
 	for (i = 0; orders[i].opcode; i++)
 	{
-		/*printf("string-%s order-%s strcmp-%d\n", string, orders[i].opcode, strcmp(orders[i].opcode, string));*/
 		if (!strcmp(orders[i].opcode, string))
 		{
 			orders[i].f(stack, line_number);
 			return (0);
 		}
-		/*printf("%s %s %d\n", string, orders[i].opcode, strcmp(orders[i].opcode, string));*/
 	}
 
 	/*printf("%s\n", string);*/
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, string);
 	free(plane.line);
-	if(*stack)
+	if (*stack)
 		free_dlistint(*stack);
 	fclose(plane.File);
 	exit(EXIT_FAILURE);

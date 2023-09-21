@@ -13,7 +13,6 @@ int main(int argc, char **argv)
 	int line_number = 1;
 
 	file = correct_monty_use(argc, argv);
-	
 	while (1)
 	{
 		read_opcode(file, &stack, line_number);
