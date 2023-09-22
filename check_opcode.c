@@ -14,7 +14,7 @@ int check_opcode(char *string, stack_t **stack, unsigned int line_number)
 		{"pop", _pop}, {"swap", _swap}, {"nop", _nop}, {"sub", _sub},
 		{"add", _add}, {"div", _div}, {"mul", _mul}, {"mod", _mod},
 		{"#", _nop}, {"pstr", _pstr}, {"pchar", _pchar}, {"rotl", _rotl},
-		{NULL, NULL}
+		{"rotr", _rotr}, {NULL, NULL}
 	};
 	int i;
 
