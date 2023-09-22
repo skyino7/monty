@@ -9,13 +9,13 @@ void _rotr(stack_t **stack, unsigned int line_number)
 	stack_t *temp;
 
 	(void)line_number;
-	if (!((*stack)->next))
+	if (!(*stack) || !((*stack)->next))
 		return;
 	while ((*stack))
 	{
 		
 		temp  = (*stack)->prev;
-		printf("---------%d\n", (*stack)->n);
+		/*printf("---------%d\n", (*stack)->n);*/
 		(*stack)->prev = (*stack)->next;
 		(*stack)->next = temp;
 		if (!((*stack)->prev))
