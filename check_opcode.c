@@ -13,7 +13,7 @@ int check_opcode(char *string, stack_t **stack, unsigned int line_number)
 		{"push", _push}, {"pall", _pall}, {"pint", _pint},
 		{"pop", _pop}, {"swap", _swap}, {"nop", _nop}, {"sub", _sub},
 		{"add", _add}, {"div", _div}, {"mul", _mul}, {"mod", _mod},
-		{"#", _nop}, {"pstr", _pstr}, {"pchar", _pchar},
+		{"#", _nop}, {"pstr", _pstr}, {"pchar", _pchar}, {"rotl", _rotl},
 		{NULL, NULL}
 	};
 	int i;
