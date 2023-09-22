@@ -1,9 +1,11 @@
 #include "monty.h"
+
 /**
  * _swap - swaps the top two elements of the stack.
  * @stack: the stack
  * @line_number: line number in the file
  */
+
 void _swap(stack_t **stack, unsigned int line_number)
 {
 	int temp;
@@ -20,4 +22,5 @@ void _swap(stack_t **stack, unsigned int line_number)
 	temp = (*stack)->n;
 	(*stack)->n = (*stack)->next->n;
 	(*stack)->next->n = temp;
+
 }
