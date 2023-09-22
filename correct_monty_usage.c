@@ -12,7 +12,7 @@ FILE *correct_monty_use(int argc, char **string)
 
 	if (argc != 2)
 	{
-		write(2, "USAGE: monty file\n", 19);
+		write(2, "USAGE: monty file\n", 18);
 		exit(EXIT_FAILURE);
 	}
 	file = fopen(string[1], "r");
