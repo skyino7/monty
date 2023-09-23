@@ -78,7 +78,7 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=c89 *.c -o monty
 
   - where `<file>` is the name of the file
 
-- If the file contains an invalid instruction, print the error message `L<line_number>: unknown instruction <opcode>`, followed by a new line, and exit with the status `EXIT_FAILURE`.
+- If the file contains an invalid instruction, print the error message `L<line_number>: unknown instruction <opcode>`, followed by a new line, and exit with the status `EXIT_FAILURE`
 
 * where is the line number where the instruction appears.
 
